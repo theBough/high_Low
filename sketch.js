@@ -1,19 +1,28 @@
-let myFont, myInput;
+let myInput, 
+    myButton,
+    answer;
 
 function setup() {
   createCanvas(300, 300);
-  myFont = loadFont("Oswald-VariableFont_wght-1.ttf")
   myInput = createInput();
-  myInput.position(100,150)
-}
+  myInput.position(50, 120);
 
+  myButton = createButton("guess");
+  myButton.position(50, 140);
+  myButton.mousePressed(getAnswer);
+  
+}
 function draw() {
-  background('#003049');
-  fill('#FDF0D5');
-  textSize(30)
-  textFont(myFont)
-  text("High Low",100,50); 
-  textSize(18)
-  text("Guess a Number",100,100); 
-  text(myInput.value(),100,200)
+  background("#1B263B");
+  fill("#E0E1DD");
+  textSize(28);
+  text("High Low", 50, 50);
+  push();
+  textSize(18);
+  text("make a guess", 50, 100);
+  pop();
+}
+function getAnswer() {
+  answer = myInput.value();
+  console.log(answer)
 }
