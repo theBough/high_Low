@@ -1,6 +1,6 @@
 let myInput, 
     myButton,
-    answer;
+    answer = "nothing yet";
 
 function setup() {
   createCanvas(300, 300);
@@ -20,6 +20,7 @@ function draw() {
   push();
   textSize(18);
   text("make a guess", 50, 100);
+  text(answer,50,200);
   pop();
 }
 function getAnswer() {
