@@ -1,6 +1,7 @@
 let myFont,
     myInput,
-    randomNumber;
+    randomNumber,
+    myButton;
 
 
 function setup() {
@@ -10,6 +11,10 @@ function setup() {
   myInput.position(100,150)
    randomNumber = Math.floor(Math.random()*100)
   console.log(randomNumber)
+  myButton = createButton("Make a Guess");
+  myButton.style('background-color','#FDF0D5')
+ 
+  myButton.position(100,180);
  
 }
 
