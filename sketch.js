@@ -1,4 +1,4 @@
-let myFont, myInput, randomNumber, myButton;
+let myFont, myInput, randomNumber, myButton, feedback;
 
 function setup() {
   createCanvas(300, 300);
@@ -7,6 +7,7 @@ function setup() {
   randomNumber = Math.floor(Math.random() * 100);
   console.log(randomNumber);
   buttonStuff();
+  feedback = 'I will give you feedback here'
 } //end setup
 function draw() {
   background("#003049");
@@ -17,10 +18,17 @@ function draw() {
   text("High Low", 100, 50);
   textSize(18);
   text("Guess a Number", 100, 100);
-  text(myInput.value(), 100, 200);
+  text(feedback, 100, 250);
   
 } //end draw
 //***********************************************
+function getAnswer(){
+  if(parseInt(myInput.value) > randomNumber){
+    feedback = 'Too High'
+  }else{
+    feedback = 'Too Low'
+  }
+}//end getAnswer
 function designStuff(){
   push()
   fill('#00b4d8')
@@ -32,8 +40,8 @@ function designStuff(){
 function buttonStuff() {
   myButton = createButton("Make a Guess");
   myButton.style("background-color", "#FDF0D5");
-
   myButton.position(100, 180);
+  myButton.mousePressed(getAnswer)
 } //end buttonStuff
 function inputStuff() {
   myInput = createInput();
