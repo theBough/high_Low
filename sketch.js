@@ -23,11 +23,12 @@ function draw() {
 } //end draw
 //***********************************************
 function getAnswer(){
-  console.log(parseInt(myInput.value) > randomNumber)
   if(myInput.value() > randomNumber){
     feedback = 'Too High'
-  }else{
+  }else if(myInput.value() < randomNumber){
     feedback = 'Too Low'
+  }else{
+    feedback = 'You Got it!'
   }
 }//end getAnswer
 function designStuff(){
