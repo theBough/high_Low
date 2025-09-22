@@ -23,7 +23,8 @@ function draw() {
 } //end draw
 //***********************************************
 function getAnswer(){
-  if(parseInt(myInput.value) > randomNumber){
+  console.log(parseInt(myInput.value) > randomNumber)
+  if(myInput.value() > randomNumber){
     feedback = 'Too High'
   }else{
     feedback = 'Too Low'
@@ -39,7 +40,8 @@ function designStuff(){
 }//end designStuff
 function buttonStuff() {
   myButton = createButton("Make a Guess");
-  myButton.style("background-color", "#FDF0D5");
+  myButton.style("background-color", "green");
+  myButton.style('font-Family', 'FascinateInline-Regular.ttf')
   myButton.position(100, 180);
   myButton.mousePressed(getAnswer)
 } //end buttonStuff
