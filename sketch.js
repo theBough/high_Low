@@ -33,6 +33,7 @@ function getAnswer(){
   }//end if
   if(myInput.value() > randomNumber){
     feedback = 'Too High'
+    img=loadImage("download.png")
   }else if(myInput.value() < randomNumber){
     feedback = 'Too Low'
   }else{
