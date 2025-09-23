@@ -1,4 +1,4 @@
-let myFont, myInput, randomNumber, myButton, feedback;
+let myFont, myInput, randomNumber, myButton, feedback,img;
 
 function setup() {
   createCanvas(300, 300);
@@ -7,7 +7,8 @@ function setup() {
   randomNumber = Math.floor(Math.random() * 100);
   console.log(randomNumber);
   buttonStuff();
-  feedback = 'I will give you feedback here'
+  feedback = 'I will give you \n feedback here'
+  img = loadImage("download.png")
 } //end setup
 function draw() {
   background("#003049");
@@ -18,18 +19,25 @@ function draw() {
   text("High Low", 100, 50);
   textSize(18);
   text("Guess a Number", 100, 100);
-  text(feedback, 100, 250);
+  text(feedback, 75, 250);
+  img.resize(50,50)
+  image(img,0,0)
   
 } //end draw
 //***********************************************
 function getAnswer(){
+  if(isNaN(myInput.value())){//this is checking if
+    // the answer is NOT  a number
+    feedback = 'Please enter a number.'
+    return;//this will exit out of the funtion
+  }//end if
   if(myInput.value() > randomNumber){
     feedback = 'Too High'
   }else if(myInput.value() < randomNumber){
     feedback = 'Too Low'
   }else{
     feedback = 'You Got it!'
-  }
+  }//end if
 }//end getAnswer
 function designStuff(){
   push()
