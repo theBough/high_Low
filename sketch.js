@@ -8,7 +8,7 @@ function setup() {
   console.log(randomNumber);
   buttonStuff();
   feedback = 'I will give you \n feedback here'
-  img = loadImage("download.png")
+  img = loadImage("download__1_-removebg-preview.png")
 } //end setup
 function draw() {
   background("#003049");
@@ -21,7 +21,7 @@ function draw() {
   text("Guess a Number", 100, 100);
   text(feedback, 75, 250);
   img.resize(50,50)
-  image(img,0,0)
+  image(img,225,225)
   
 } //end draw
 //***********************************************
