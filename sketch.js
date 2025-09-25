@@ -9,6 +9,7 @@ function setup() {
   buttonStuff();
   feedback = 'I will give you \n feedback here'
   img = loadImage("download__1_-removebg-preview.png")
+  
   guesses = 0;
 } //end setup
 function draw() {
@@ -23,6 +24,7 @@ function draw() {
   text(feedback, 75, 250);
   img.resize(50,50)
   image(img,225,225)
+  image(img,500,225)
   text("Guess: " + guesses,30,30)
 } //end draw
 //***********************************************
